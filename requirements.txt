@@ -1,0 +1,11 @@
+# 音频格式转换器 — 依赖清单
+# 安装: pip install -r requirements.txt
+
+# ── GUI ──
+tkinterdnd2>=0.4.0
+
+# ── NCM 解密 ──
+pycryptodome>=3.19.0
+
+# ── 打包（可选） ──
+# pyinstaller>=6.0
