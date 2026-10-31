@@ -1,16 +1,17 @@
 # 音频格式转换器 (Audio Format Converter)
 
-纯本地运行的加密音频格式解密转换工具，支持网易云、酷狗、QQ音乐等平台的加密格式转为通用格式。
+纯本地运行的加密音频格式解密转换工具，支持 NCM / KGM / MGG / QMC 系列加密格式转为通用音频格式。
 
 **完全免费、开源、无广告、无会员、无任何授权验证。**
 
 ## 支持的格式
 
-| 平台 | 加密格式 | 说明 |
-|------|----------|------|
-| 网易云音乐 | `.ncm` | NCM 容器解密 |
-| 酷狗音乐 | `.kgm` / `.kgma` / `.mgg` / `.mflac` / `.mflac0` | KGM/MGG 系列 |
-| QQ音乐 | `.qmc0` / `.qmc3` / `.qmcflac` / `.qmcogg` / `.mflac` | QMC 系列 |
+| 加密格式 | 扩展名 | 说明 |
+|----------|--------|------|
+| NCM | `.ncm` | NCM 容器解密 |
+| KGM | `.kgm` / `.kgma` | KGM 系列 |
+| MGG | `.mgg` / `.mflac` / `.mflac0` | MGG 系列 |
+| QMC | `.qmc0` / `.qmc3` / `.qmcflac` / `.qmcogg` / `.mflac` | QMC 系列 |
 
 解密后通过 FFmpeg 转为 MP3 或其他通用格式。
 
@@ -54,9 +55,9 @@ pyinstaller --noconsole --onefile --icon=icon.ico --add-data "core;core" convert
 .
 ├── converter_gui.py        # GUI 主程序
 ├── core/
-│   ├── ncm_decrypt.py      # 网易云 NCM 解密
-│   ├── kgm_decrypt.py      # 酷狗 KGM/MGG 解密
-│   ├── qmc_decrypt.py      # QQ音乐 QMC 解密
+│   ├── ncm_decrypt.py      # NCM 解密
+│   ├── kgm_decrypt.py      # KGM/MGG 解密
+│   ├── qmc_decrypt.py      # QMC 解密
 │   └── converter.py        # FFmpeg 转码封装
 ├── icon.ico
 ├── run.bat
@@ -65,14 +66,14 @@ pyinstaller --noconsole --onefile --icon=icon.ico --add-data "core;core" convert
 
 ## 免责声明
 
-本项目仅供**个人学习和技术研究**使用，用于解密你自己合法购买的音乐文件以便在个人设备上播放。
+本项目仅供**个人学习和技术研究**使用，用于处理你拥有合法使用权的音频文件，以便在个人设备上播放。
 
 请勿将本工具用于：
-- 传播、分发受版权保护的音乐
+- 传播、分发受版权保护的音频内容
 - 任何商业用途
 - 任何侵犯版权方权益的行为
 
-使用者需自行承担因使用本工具产生的一切法律责任。音乐版权归各版权方所有，请支持正版。
+使用者需自行承担因使用本工具产生的一切法律责任。音频版权归各版权方所有，请支持正版。
 
 ## 许可证
 

@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
 """
-KGM / MGG (酷狗音乐加密格式) 解密核心
+KGM / MGG 加密格式解密核心
 
 参考 unlock-music 项目算法实现
-KGM 和 MGG 是酷狗音乐的私有加密格式，使用 XOR 流密码加密
+KGM 和 MGG 是私有加密格式，使用 XOR 流密码加密
 """
 
 import struct
@@ -180,7 +180,7 @@ def parse_kgm(filepath):
 
 def parse_mgg(filepath):
     """
-    解析并解密 MGG 文件（酷狗新版格式）
+    解析并解密 MGG 文件（新版格式）
     
     MGG 文件结构类似 KGM，但使用不同的密钥表
     

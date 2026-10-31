@@ -1,11 +1,11 @@
 # -*- coding: utf-8 -*-
 """
-QMC0 / QMC3 / QMCflac / QMCogg / MFLAC (QQ音乐加密格式) 解密核心
+QMC0 / QMC3 / QMCflac / QMCogg / MFLAC 加密格式解密核心
 
-QQ音乐使用多种变体的 XOR 加密格式。
+该系列格式使用多种变体的 XOR 加密。
 - QMC0, QMC3: 较老的格式，纯 XOR 加密
 - QMCflac, QMCogg: FLAC/OGG 的加密版本
-- MFLAC: QQ音乐对 FLAC 的另一种加密格式
+- MFLAC: 对 FLAC 的另一种加密格式
 
 参考 unlock-music 项目算法实现
 """
@@ -15,7 +15,7 @@ import os
 
 
 # ─── QMC 标准密钥表（128字节） ───
-# 来自 unlock-music 的QQ音乐密钥表
+# 密钥表（参考开源项目 unlock-music）
 # 用于 QMC0/QMC3 等老格式
 _QMC_STATIC_KEY = bytes([
     0x4D, 0x4D, 0x54, 0x42, 0x43, 0x45, 0x50, 0x49,
@@ -49,7 +49,7 @@ def _make_qmc_key_easy(seed1=0x4D, seed2=0x4D):
     """
     生成简单位置 XOR 密钥表
     
-    基于 QQ 音乐早期版本的简单 XOR 算法
+    基于早期版本的简单 XOR 算法
     key[i] = (i * seed1 + seed2) & 0xFF
     
     或另一种变体：
@@ -155,7 +155,7 @@ def parse_qmc(filepath):
     """
     解析并解密 QMC0 / QMC3 / QMCflac / QMCogg / MFLAC 文件
     
-    QQ音乐加密格式特点：
+    该格式特点：
     - 文件整体 XOR 加密，无头部信息
     - 解密后为标准的音频格式
     - QMC0/QMC3 -> MP3/FLAC
@@ -192,7 +192,7 @@ def parse_qmc(filepath):
         decrypted, strategy, fmt = _try_decrypt_strategies(data, None)
         
     elif ext == ".mflac":
-        # MFLAC: QQ音乐的FLAC加密格式
+        # MFLAC: FLAC 加密格式
         decrypted, strategy, fmt = _try_decrypt_strategies(data, None)
         
     else:
@@ -205,7 +205,7 @@ def parse_qmc(filepath):
 
 def decrypt_qmc(filepath):
     """
-    解密 QQ音乐 QMC 系列加密文件
+    解密 QMC 系列加密文件
     
     支持: qmc0, qmc3, qmcflac, qmcogg, mflac
     

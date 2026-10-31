@@ -141,7 +141,7 @@ def get_supported_formats():
     return [
         ("音频文件", "*.flac *.ncm *.wav *.aac *.ogg *.wma *.ape *.m4a *.opus"),
         ("FLAC", "*.flac"),
-        ("NCM (网易云)", "*.ncm"),
+        ("NCM 格式", "*.ncm"),
         ("WAV", "*.wav"),
         ("AAC", "*.aac"),
         ("OGG", "*.ogg"),

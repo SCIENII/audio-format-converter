@@ -309,12 +309,12 @@ class AudioConverterApp:
             title="选择音频文件",
             filetypes=[
                 ("音频文件", "*.flac *.ncm *.wav *.aac *.ogg *.wma *.ape *.m4a *.opus *.kgm *.mgg *.qmc0 *.qmc3 *.qmcflac *.qmcogg *.mflac"),
-                ("NCM (网易云)", "*.ncm"),
+                ("NCM 格式", "*.ncm"),
                 ("FLAC", "*.flac"),
-                ("KGM (酷狗)", "*.kgm"),
-                ("MGG (酷狗)", "*.mgg"),
-                ("QMC0/QMC3 (QQ音乐)", "*.qmc0 *.qmc3"),
-                ("QMCflac/QMCogg/MFLAC (QQ音乐)", "*.qmcflac *.qmcogg *.mflac"),
+                ("KGM 格式", "*.kgm"),
+                ("MGG 格式", "*.mgg"),
+                ("QMC0/QMC3 格式", "*.qmc0 *.qmc3"),
+                ("QMCflac/QMCogg/MFLAC 格式", "*.qmcflac *.qmcogg *.mflac"),
                 ("所有文件", "*.*"),
             ]
         )
@@ -631,9 +631,9 @@ class AudioConverterApp:
             "📥 拖拽导入:\n"
             "  直接将文件或文件夹拖入窗口\n\n"
             "🔄 支持的格式:\n"
-            "  ■ 网易云音乐: NCM\n"
-            "  ■ 酷狗音乐: KGM, MGG\n"
-            "  ■ QQ音乐: QMC0, QMC3, QMCflac, QMCogg, MFLAC\n"
+            "  ■ NCM 格式: .ncm\n"
+            "  ■ KGM/MGG 格式: .kgm, .kgma, .mgg\n"
+            "  ■ QMC 格式: .qmc0, .qmc3, .qmcflac, .qmcogg, .mflac\n"
             "  ■ 标准音频: FLAC, WAV, AAC, OGG,\n"
             "              WMA, APE, M4A, Opus\n\n"
             "📝 转换说明:\n"
@@ -651,8 +651,8 @@ class AudioConverterApp:
         messagebox.showinfo("关于",
             "🎵 音频格式转换器 v3.0\n\n"
             "支持格式:\n"
-            "  NCM (网易云) | KGM/MGG (酷狗)\n"
-            "  QMC0/QMC3/QMCflac/QMCogg/MFLAC (QQ音乐)\n"
+            "  NCM | KGM / MGG\n"
+            "  QMC0 / QMC3 / QMCflac / QMCogg / MFLAC\n"
             "  FLAC/WAV/AAC/OGG/WMA/APE/M4A/Opus\n\n"
             "引擎: FFmpeg + Python 解密库\n"
             "界面: Tkinter + tkinterdnd2\n"
